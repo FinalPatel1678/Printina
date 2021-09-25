@@ -1,12 +1,12 @@
 import { List, ListItem } from '@material-ui/core';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import routes from '../routes';
 
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme:Theme) =>
   createStyles({
     innerHeader: {
       background: 'url(./images/background/direction-header-bg.jpg) no-repeat center !important',
@@ -25,6 +25,11 @@ const useStyles = makeStyles(() =>
           padding: 0,
           width: 'fit-content',
           fontSize: 13
+        }
+      },
+      [theme.breakpoints.down(600)]: {
+        '& b': {
+          fontSize: 30
         }
       },
     },
