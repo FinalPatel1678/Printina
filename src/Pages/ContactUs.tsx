@@ -1,5 +1,6 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import React from 'react';
+import DirectionHeader from '../Component/DirectionHeader';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -11,7 +12,7 @@ const ContactUs: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>Contact us.tsx</React.Fragment>
+    <React.Fragment><DirectionHeader></DirectionHeader></React.Fragment>
   );
 }
 export default ContactUs;

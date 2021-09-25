@@ -19,7 +19,7 @@ const App: React.FC = () => {
             <Switch>
               {/* <Route path="/blogs/:id">
               </Route> */}
-              {routes.map((route: IRoute) => <Route exact path={route.link} component={route.component} />)}
+              {routes.map((route: IRoute) => <Route exact path={route.link} component={route.component} key={route.text} />)}
             </Switch>
           </div>
         </Layout>

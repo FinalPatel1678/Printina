@@ -16,6 +16,7 @@ import SocialMedia from './Social Media';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     appBar: {
+      boxShadow:'none',
       backgroundColor: '#ffffff',
       [theme.breakpoints.down(960)]: {
         '& .MuiContainer-fixed': {
@@ -260,7 +261,7 @@ const Header: React.FC = () => {
               </ListItem>
             </Typography>
             {headerRoutes.map((page) => (
-              <Typography variant="h6" noWrap color='textPrimary' className={classes.headerItems}>
+              <Typography variant="h6" noWrap color='textPrimary' className={classes.headerItems} key={page.text}>
                 <ListItem button to={page['link']} activeClassName={classes.active} className={classes.linkItem} component={NavLink} key={page['text']} >
                   <ListItemText primary={page["text"]} />
                 </ListItem>

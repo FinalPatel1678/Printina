@@ -10,19 +10,22 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex'
     },
     drawerHeader: {
-      marginTop:60,
+      marginTop: 60,
       display: 'flex',
       alignItems: 'center',
       padding: theme.spacing(0, 1),
       ...theme.mixins.toolbar,
       justifyContent: 'flex-start',
       [theme.breakpoints.down(600)]: {
-        marginTop:20,
+        marginTop: 20,
       },
     },
     content: {
       flexGrow: 1,
       marginRight: 0,
+      '& div': {
+        padding: '0 !important'
+      }
     },
   }));
 const Layout: React.FC<{}> = ({ children }: React.PropsWithChildren<{}>) => {
