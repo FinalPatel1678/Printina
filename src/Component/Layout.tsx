@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(0, 1),
       ...theme.mixins.toolbar,
       justifyContent: 'flex-start',
-      [theme.breakpoints.down(600)]: {
+      [theme.breakpoints.down('xs')]: {
         marginTop: 20,
       },
     },
