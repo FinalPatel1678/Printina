@@ -34,6 +34,12 @@ export const authRoutes: IRoute[] = [
     { text: 'Registration', link: `/registration`, component: Registration },
     { text: 'Login', link: `/login`, component: Login }]
 
+export const footerTop: IRoute[] = [
+    ...homeRoutes,
+    { text: 'Products', link: `/products`, component: Products },
+    { text: 'Blogs', link: `/blogs`, component: Blogs },
+    { text: 'FAQs', link: `/faqs`, component: FAQs }]
+
 const routes: IRoute[] = [...headerRoutes, ...footerRoutes, ...homeRoutes, ...authRoutes]
 
 export default routes;

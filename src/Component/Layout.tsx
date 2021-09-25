@@ -4,11 +4,12 @@ import Header from "./AppBar";
 import { createStyles, makeStyles, Theme, createMuiTheme, ThemeProvider, Typography } from "@material-ui/core";
 import Footer from "./Footer";
 import DirectionHeader from "./DirectionHeader";
+import FooterTop from "./FooterTop";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      display: 'flex'
+      display: 'flex',
     },
     drawerHeader: {
       marginTop: 60,
@@ -24,12 +25,9 @@ const useStyles = makeStyles((theme: Theme) =>
     content: {
       flexGrow: 1,
       marginRight: 0,
-      '& div': {
-        padding: '0 !important'
-      }
     },
   }));
-const Layout: React.FC<{}> = ({ children }: React.PropsWithChildren<{}>) => {
+const Layout: React.FC = ({ children }: React.PropsWithChildren<{}>) => {
 
   const classes = useStyles();
   const theme = createMuiTheme({
@@ -48,6 +46,7 @@ const Layout: React.FC<{}> = ({ children }: React.PropsWithChildren<{}>) => {
           <div className={classes.drawerHeader} />
           <DirectionHeader/>
           {children}
+          <FooterTop/>
           <Footer />
         </main>
         <ResponsiveDrawer />
