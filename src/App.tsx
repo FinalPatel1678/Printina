@@ -18,7 +18,6 @@ const App: React.FC = () => {
           <div style={{ padding: 10 }}>
             <Switch>
               {/* <Route path="/blogs/:id">
-
               </Route> */}
               {routes.map((route: IRoute) => <Route exact path={route.link} component={route.component} />)}
             </Switch>
