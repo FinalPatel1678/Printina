@@ -1,5 +1,4 @@
 import React from 'react';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -7,14 +6,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 import { NavLink } from 'react-router-dom'
 import { useLayoutContext } from '../Contexts/LayoutContext';
-import { Avatar, IconButton, ThemeProvider, Typography } from '@material-ui/core';
+import { IconButton, ThemeProvider, Typography } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { headerRoutes } from '../routes';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import PinterestIcon from '@material-ui/icons/Pinterest';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import YouTubeIcon from '@material-ui/icons/YouTube';
 import { createMuiTheme } from '@material-ui/core';
 import SocialMedia from './Social Media';
 
@@ -32,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
         color: '#ffffff'
       },
     },
-    drawerHeader: {
+    drawerHeaderIcon: {
       display: 'flex',
       alignItems: 'center',
       padding: theme.spacing(0, 1),
@@ -84,7 +78,7 @@ const ResponsiveDrawer: React.FC<{}> = () => {
           paper: classes.drawerPaper,
         }}
       >
-        <Typography component='div' className={classes.drawerHeader}>
+        <Typography component='div' className={classes.drawerHeaderIcon}>
           <IconButton onClick={handleDrawerToggle}>
             {theme.direction === 'ltr' ? <CloseIcon /> : <CloseIcon />}
           </IconButton>
