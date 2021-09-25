@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme:Theme) =>
           fontSize: 13
         }
       },
-      [theme.breakpoints.down(600)]: {
+      [theme.breakpoints.down('xs')]: {
         '& b': {
           fontSize: 30
         }

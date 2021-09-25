@@ -23,10 +23,14 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingLeft: 70,
       fontWeight: 600,
       marginBottom: 20,
-      fontSize: 18
+      fontSize: 18,
+      [theme.breakpoints.down('md')]: {
+        padding:'0 !important'
+      },
     },
     quickLinks: {
       padding: '0 70px !important',
+      flexDirection:'row',
       '& ul': {
         paddingTop: 0,
         paddingBottom: 0,
@@ -42,10 +46,13 @@ const useStyles = makeStyles((theme: Theme) =>
           textDecoration: 'none'
         }
       },
+      [theme.breakpoints.down('md')]: {
+        padding:'0 !important'
+      },
     },
     links: {
       paddingRight: 10,
-      width: '45%'
+      width: '45%',
     },
     contact: {
       display: 'table',
@@ -105,12 +112,12 @@ const FooterTop: React.FC = () => {
   return (
     <Typography component='div' className={classes.root}>
       <Container fixed>
-        <Grid container spacing={3}>
-          <Grid item xs={3}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}  md={3} >
             <Typography className={classes.title} variant='subtitle1'>Printina</Typography>
             <Typography component='p'> Since 1972, Printina is a goal-driven organization devoted to supporting the wide-ranging printing & media technology chain. We are a leading manufacturer of ground-breaking printing solutions, provide all categories of printing technologies comprising thermal transfer, direct thermal, inkjet, laser, and dot matrix.</Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6} >
             <Typography className={classes.quickLinksTitle} variant='subtitle1'>Quick Links</Typography>
             <Box display='flex' className={classes.quickLinks}>
               <Box className={classes.links}>
@@ -133,7 +140,7 @@ const FooterTop: React.FC = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12}  md={3} >
             <Typography className={classes.title} variant='subtitle1'>Contact Us</Typography>
             <Typography component='p'>14/A, Parvati Industrial Estate, Opp. Adinath Society, Pune – Satara Road, Pune – 411009. Maharashtra, India</Typography>
             <Typography component='div' style={{ marginTop: 20 }} className={classes.contact}>

@@ -18,13 +18,13 @@ const useStyles = makeStyles((theme: Theme) =>
     appBar: {
       boxShadow:'none',
       backgroundColor: '#ffffff',
-      [theme.breakpoints.down(960)]: {
+      [theme.breakpoints.down('sm')]: {
         '& .MuiContainer-fixed': {
           width: '100%',
           maxWidth: 1500
         }
       },
-      [theme.breakpoints.down(600)]: {
+      [theme.breakpoints.down('xs')]: {
         '& .MuiContainer-fixed': {
           padding: 5
         }
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.up(1024)]: {
         display: 'none',
       },
-      [theme.breakpoints.down(600)]: {
+      [theme.breakpoints.down('xs')]: {
         height: 35,
         margin: '20px 5px 20px 5px',
       },
@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme: Theme) =>
           marginRight: 0,
         },
       },
-      [theme.breakpoints.down(600)]: {
+      [theme.breakpoints.down('xs')]: {
         padding: 8,
         '& span': {
           display: 'none',
@@ -123,7 +123,7 @@ const useStyles = makeStyles((theme: Theme) =>
     logoLink: {
       width: 'fit-content',
       padding: 0,
-      [theme.breakpoints.down(600)]: {
+      [theme.breakpoints.down('xs')]: {
         padding: '0 !important',
         '& img': {
           width: 180,
@@ -138,7 +138,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     topStrip: {
       backgroundColor: '#000000',
-      [theme.breakpoints.down(600)]: {
+      [theme.breakpoints.down('xs')]: {
         display: 'none'
       },
     },
@@ -197,7 +197,7 @@ const useStyles = makeStyles((theme: Theme) =>
           left: '50%',
           transform: 'translate(-50%, -50%)',
         },
-        [theme.breakpoints.down(600)]: {
+        [theme.breakpoints.down('xs')]: {
           height: 38,
           width: 44,
           '& svg': {
