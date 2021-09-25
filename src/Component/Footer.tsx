@@ -8,8 +8,6 @@ import { footerRoutes } from '../routes';
 const useStyles = makeStyles(() =>
   createStyles({
     footer: {
-      position: 'fixed',
-      bottom: 0,
       width: '100%',
       backgroundColor: '#194387',
       color: '#ffffff',

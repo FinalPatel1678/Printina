@@ -9,11 +9,6 @@ import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 import CallIcon from '@material-ui/icons/Call';
 import EmailIcon from '@material-ui/icons/Email';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import PinterestIcon from '@material-ui/icons/Pinterest';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import YouTubeIcon from '@material-ui/icons/YouTube';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import { headerRoutes } from '../routes';
 import SocialMedia from './Social Media';
@@ -22,10 +17,6 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     appBar: {
       backgroundColor: '#ffffff',
-      transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
       [theme.breakpoints.down(960)]: {
         '& .MuiContainer-fixed': {
           width: '100%',
@@ -55,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 40,
       borderBottom: 0,
       justifyContent: 'center',
-      margin: '30px 0px 30px 10px',
+      margin: '25px 0px 27px 10px',
       color: '#fff',
       background: 'linear-gradient(to right, rgba(59,172,233,1) 0%, rgba(1,121,185,1) 100%)',
       [theme.breakpoints.up(1024)]: {
