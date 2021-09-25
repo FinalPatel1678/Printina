@@ -2,8 +2,6 @@ import React from "react";
 import ResponsiveDrawer from "./Drawer";
 import Header from "./AppBar";
 import { createStyles, makeStyles, Theme, createMuiTheme, ThemeProvider, Typography } from "@material-ui/core";
-import { useLayoutContext } from "../Contexts/LayoutContext";
-import clsx from "clsx";
 import Footer from "./Footer";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -12,19 +10,18 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex'
     },
     drawerHeader: {
+      marginTop:60,
       display: 'flex',
       alignItems: 'center',
       padding: theme.spacing(0, 1),
       ...theme.mixins.toolbar,
       justifyContent: 'flex-start',
+      [theme.breakpoints.down(600)]: {
+        marginTop:20,
+      },
     },
     content: {
       flexGrow: 1,
-      padding: theme.spacing(3),
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
       marginRight: 0,
     },
   }));
@@ -43,14 +40,12 @@ const Layout: React.FC<{}> = ({ children }: React.PropsWithChildren<{}>) => {
     <ThemeProvider theme={theme}>
       <Typography component='div' className='root'>
         <Header />
-        <main
-          className={classes.content}
-        >
-          <div className={classes.drawerHeader} />          
+        <main className={classes.content}>
+          <div className={classes.drawerHeader} />
           {children}
+          <Footer />
         </main>
         <ResponsiveDrawer />
-        <Footer />
       </Typography>
     </ThemeProvider>
   )
