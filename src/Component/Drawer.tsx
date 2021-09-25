@@ -11,6 +11,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { headerRoutes } from '../routes';
 import { createMuiTheme } from '@material-ui/core';
 import SocialMedia from './Social Media';
+import { keys } from '@material-ui/core/styles/createBreakpoints';
 
 const drawerWidth = 'fit-content';
 
@@ -85,7 +86,7 @@ const ResponsiveDrawer: React.FC<{}> = () => {
         </Typography>
         <List>
           {headerRoutes.map((page) => (
-            <Typography component='div' className={classes.listItems} variant="h6" noWrap onClick={() => { layoutContext.setopen(!layoutContext.open) }}>
+            <Typography component='div' className={classes.listItems} variant="h6" noWrap onClick={() => { layoutContext.setopen(!layoutContext.open)}} key={page.text}>
               <ListItem button to={page['link']} activeClassName={classes.active} component={NavLink} key={page['text']} >
                 <ListItemText primary={page["text"]} />
               </ListItem>
