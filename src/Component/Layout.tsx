@@ -3,6 +3,7 @@ import ResponsiveDrawer from "./Drawer";
 import Header from "./AppBar";
 import { createStyles, makeStyles, Theme, createMuiTheme, ThemeProvider, Typography } from "@material-ui/core";
 import Footer from "./Footer";
+import DirectionHeader from "./DirectionHeader";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -45,6 +46,7 @@ const Layout: React.FC<{}> = ({ children }: React.PropsWithChildren<{}>) => {
         <Header />
         <main className={classes.content}>
           <div className={classes.drawerHeader} />
+          <DirectionHeader/>
           {children}
           <Footer />
         </main>

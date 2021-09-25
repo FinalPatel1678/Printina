@@ -2,8 +2,8 @@ import { List, ListItem } from '@material-ui/core';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { headerRoutes } from '../routes';
+import { NavLink, useLocation } from 'react-router-dom';
+import routes from '../routes';
 
 
 const useStyles = makeStyles(() =>
@@ -36,17 +36,20 @@ const useStyles = makeStyles(() =>
 
 const DirectionHeader: React.FC<any> = (props: any) => {
   const classes = useStyles();
-  const path = window.location.pathname
+  const path = useLocation()
   const [route, setRoute] = useState<string>('')
 
   useEffect(() => {
-    headerRoutes.map((route) => {
-      if (route['link'] === path) {
+    routes.map((route) => {
+      if (route['link'] === path.pathname) {
         setRoute(route["text"])
       }
     })
+  }, [path])
 
-  }, [])
+  if (path.pathname === '/') {
+    return null
+  }
 
   return (
     <Typography component='section' className={classes.innerHeader}>
@@ -58,7 +61,7 @@ const DirectionHeader: React.FC<any> = (props: any) => {
           Home&nbsp;&nbsp;|
         </ListItem>
         <ListItem button to={path} activeClassName={classes.activeLink} component={NavLink} key={route}>
-        &nbsp;&nbsp;{route}
+          &nbsp;&nbsp;{route}
         </ListItem>
       </List>
     </Typography>
