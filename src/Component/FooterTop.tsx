@@ -2,7 +2,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React, { useEffect, useState } from 'react';
 import { Box, Container, Grid, Link, List, ListItem } from '@material-ui/core';
-import { footerTop, headerRoutes } from '../routes';
+import { footerTop, headerRoutes, subProductRoutes } from '../routes';
 import { NavLink, useLocation } from 'react-router-dom';
 import CallIcon from '@material-ui/icons/Call';
 import EmailIcon from '@material-ui/icons/Email';
@@ -131,7 +131,7 @@ const FooterTop: React.FC = () => {
               </Box>
               <Box className={classes.links}>
                 <List dense>
-                  {headerRoutes.map((page) => (
+                  {subProductRoutes.map((page) => (
                     <ListItem button to={page['link']} component={NavLink} key={page['text']} >
                       {page["text"]}
                     </ListItem>

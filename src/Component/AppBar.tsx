@@ -12,11 +12,12 @@ import EmailIcon from '@material-ui/icons/Email';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import { headerRoutes } from '../routes';
 import SocialMedia from './Social Media';
+import SubProductsOnNavBar from './SubProductsOnNavBar';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     appBar: {
-      boxShadow:'none',
+      boxShadow: 'none',
       backgroundColor: '#ffffff',
       [theme.breakpoints.down('sm')]: {
         '& .MuiContainer-fixed': {
@@ -110,6 +111,9 @@ const useStyles = makeStyles((theme: Theme) =>
     headerItems: {
       [theme.breakpoints.between(0, 1024)]: {
         display: 'none',
+      },
+      '& a': {
+        backgroundColor: 'transparent !important'
       },
       '& a:hover': {
         backgroundColor: 'transparent'
@@ -263,7 +267,7 @@ const Header: React.FC = () => {
             {headerRoutes.map((page) => (
               <Typography variant="h6" noWrap color='textPrimary' className={classes.headerItems} key={page.text}>
                 <ListItem button to={page['link']} activeClassName={classes.active} className={classes.linkItem} component={NavLink} key={page['text']} >
-                  <ListItemText primary={page["text"]} />
+                  {page['text'] !== 'Products' ? <ListItemText primary={page["text"]} /> : <SubProductsOnNavBar><ListItemText primary={page["text"]} /></SubProductsOnNavBar>}
                 </ListItem>
               </Typography>
             ))}
