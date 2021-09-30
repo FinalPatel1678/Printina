@@ -25,11 +25,9 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         container: {
-            '& li': {
-                padding: 0,
-                paddingBottom: 5
-            },
-            '& li svg': {
+            padding: 0,
+            paddingBottom: 5,
+            '& svg': {
                 marginRight: 7,
                 fontWeight: 'normal',
                 fontSize: 12
@@ -87,7 +85,7 @@ const SubProductsOnNavBar: React.FC = ({ children }: React.PropsWithChildren<{}>
                 onClose={handlePopoverClose}
                 disableRestoreFocus
             >
-                <Container fixed className={classes.container}>
+                <Container fixed>
                     <Grid container spacing={4}>
                         {subProductRoutes.map((route) =>
                             <Grid item xs={4} key={route.text}>
@@ -97,7 +95,7 @@ const SubProductsOnNavBar: React.FC = ({ children }: React.PropsWithChildren<{}>
                                     </ListItem>
                                 </Typography>
                                 {route.hashLink && route.hashLink.map((link) =>
-                                    <MenuItem component={NavLink} to={route.link + link.link} key={link.text} >
+                                    <MenuItem className={classes.container} component={NavLink} to={route.link + link.link} key={link.text} >
                                         <DoubleArrowIcon fontSize='small' />
                                         <Typography variant='subtitle2'>{link.text}</Typography>
                                     </MenuItem>
