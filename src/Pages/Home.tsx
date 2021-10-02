@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>Home.tsx</React.Fragment>
+    <React.Fragment></React.Fragment>
   );
 }
 export default Home;

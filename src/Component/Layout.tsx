@@ -5,6 +5,7 @@ import { createStyles, makeStyles, Theme, createMuiTheme, ThemeProvider, Typogra
 import Footer from "./Footer";
 import DirectionHeader from "./DirectionHeader";
 import FooterTop from "./FooterTop";
+import GetInTouchWithUs from "./GetInTouchWithUs";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -46,6 +47,7 @@ const Layout: React.FC = ({ children }: React.PropsWithChildren<{}>) => {
           <div className={classes.drawerHeader} />
           <DirectionHeader/>
           {children}
+          <GetInTouchWithUs/>
           <FooterTop/>
           <Footer />
         </main>
